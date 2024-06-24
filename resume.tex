@@ -1,0 +1,134 @@
+\documentclass[]{resume-openfont}
+
+\pagestyle{fancy}
+\resetHeaderAndFooter
+
+%--------------------------------------------------------------
+% Convenience command - make it easy to fill template
+
+% Create job position command. Parameters: company, position, location, when
+\newcommand{\resumeHeading}[4]{\runsubsection{\uppercase{#1}}\descript{ | #2}\hfill\location{#3 | #4}\fakeNewLine}
+
+% Create education heading. Parameters: Name, degree, location, when
+\newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}  \location{#3 | #4}\\
+\descript{#2}\\} %\fakeNewLine}
+
+% Create project heading. Parameters: Name, link, Tech stack
+\newcommand{\projectHeading}[3]{\Project{#1}{#2}
+\descript{#3}\\}
+
+\newcommand{\projectHeadingWithDate}[4]{\Project{#1}{#2}
+\descript{#3 | #4}\\}
+
+% Parameters: courses
+\newcommand{\courseWork}[1]{\textbf{Coursework:} #1}
+
+% Parameters: courses
+\newcommand{\teacherAssistant}[1]{\textbf{Teacher Assistant (TA):} #1}
+
+\usepackage{fontawesome5}
+ 
+%--------------------------------------------------------------
+\begin{document}
+
+%--------------------------------------------------------------
+%     Profile
+%--------------------------------------------------------------
+% How you want it to show up on the resume
+%\newcommand{\yourWebsite}{website.com}
+% vs how you want it to show up. If it's the same you can just replace "\yourWebsiteLink" with "yourWebsite"
+%\newcommand{\yourWebsiteLink}{https://website.com}
+\newcommand{\yourEmail}{mattia.toninelli@ifom.eu}
+\newcommand{\yourPhone}{+39 3924286577}
+\newcommand{\githubUserName}{mtoninel}
+\newcommand{\linkedInUserName}{MattiaToninelli}
+
+% An alternate profile section 
+% \alignProfileTable
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%     \ralewayBold{\href{\yourWebsiteLink}{\Large \yourName}} & 
+%     Email : \href{mailto:\yourEmail}{\yourEmail}
+%     \\
+%     \href{https://github.com/\githubUserName}{GitHub://\githubUserName} & 
+%     Mobile : \yourPhone
+%     \\
+%     \href{https://www.linkedin.com/in/\linkedInUserName}{LinkedIn://\linkedInUserName} & Website : \href{\yourWebsiteLink}{\yourWebsite}
+%     \\
+% \end{tabular*}
+
+\begin{center}
+    \Huge \scshape \latoThin{Mattia} \latoLight{Toninelli} \\ \vspace{7pt}
+    \small \href{mailto:\yourEmail}{\faIcon{envelope} {\yourEmail}}  $|$  \faIcon{mobile-alt} \yourPhone $|$ 
+    \href{https://www.linkedin.com/in/mattia-toninelli-890134231/}{{\faIcon{linkedin} \linkedInUserName}} $|$
+    \href{https://github.com/mtoninel}{\faIcon{github} {\githubUserName}} 
+    % $|$ \href{\yourWebsiteLink}{\underline{\yourWebsite}}
+\end{center}
+
+% Intro
+% Intro
+\section{Hello!}
+I am a computational biology PhD student interested in bioinformatics and data analysis. My daily work is focused on extracting relevant insights from biological data in the cancer immunology field using computational methods.\\
+More generally, I tend to approach everything in life with genuine curiosity and an urge to learn, enjoying team work and discussions with my peers in collaborative environments. I also enjoy compelling ways to get from data to expressive visualizations.
+
+%--------------------------------------------------------------
+%     Education
+%--------------------------------------------------------------
+\section{Education}
+\educationHeading{Computational Biology Ph.D. Program}{SEMM - European School of Molecular Medicine}{Milan, Italy}{Oct 2022 - Current}
+\vspace{0.25cm}
+\educationHeading{M.S. in Medical Biotechnology and Molecular Medicine}{Università degli studi di Milano}{Milan, Italy}{Sep 2019 - Feb 2022}
+Grade: 110/110 cum laude\\
+Thesis: Charting the Epigenetic Landscape Behind T-cell Dysfunction in Cancer\\
+\vspace{0.25cm}
+\educationHeading{B.S. Biology}{Università dell'Insubria}{Varese, Italy}{Sep 2016 - Jul 2019}
+Grade: 106/110\\
+Thesis: Preliminary Characterization of the Interaction Between Cdkl5 and Collybistin\\
+\vspace{0.15cm}
+%\educationHeading{Exchange Student Experience}{Sheldon High School}{Elk Grove (CA), USA}{Aug 2014 - Jun 2015}
+%\sectionsep
+
+%--------------------------------------------------------------
+%     Experience
+%--------------------------------------------------------------
+\section{Experience}
+\resumeHeading{IFOM ETS}{PhD - Computational Biology (\href{https://www.semm.it/}{SEMM})}{Milan, Italy}{Oct 2022 – Current}
+\begin{bullets}
+    \item Development of an organic workflow for the analysis of \textit{in situ} based \textbf{spatial transcriptomics} techniques in \textbf{Python} and basic familiarization with \textbf{Deep-Learning models} for image analysis tasks in complex cancer tissues. 
+    \item Mapping of transcriptional features isolated from scRNA-seq and spatial data on to \textbf{existing large scale public data cohorts} with associated clinical metadata (i.e. TCGA, harmonization of public microarray cohorts) to determine target therapeutic relevance. 
+\end{bullets}
+\sectionsep
+\resumeHeading{IFOM ETS}{Research Internship}{Milan, Italy}{Mar 2021 – Oct 2022}
+\begin{bullets}
+    \item Bioinformatic analysis of NGS data coming from tumor samples and tumor-infiltrating lymphocytes (TILs). The internship is the follow-up to my thesis project in the \textbf{\href{https://www.ifom.eu/en/cancer-research/research-labs/research-lab-pagani.php}{Molecular Oncology and Immunology Laboratory}} of Professor Massimiliano Pagani, in which I focused on the analysis of both \textbf{ATAC-seq} and \textbf{scRNA-seq} data in R and Python and their computational integration to dissect the regulatory landscape of TILs in the context of both lung and colon cancer.
+    \item Experience with both \textbf{unsupervised and supervised machine-learning methods} for dimensionality reduction (i.e. PCA, NMF) and classification tasks (\textit{k}-means clustering, logistic regression and decision trees) within the Scikit-learn Python framework.
+\end{bullets}
+\sectionsep
+
+\resumeHeading{Università dell'Insubria}{Research Internship}{Varese, Italy}{Feb 2019 - Jun 2019}
+\begin{bullets}
+    \item The internship in the \href{https://www.dbsm.uninsubria.it/nbiomol/}{Molecular Neurobiology Laboratory} of Professor Charlotte Kilstrup-Nielsen was focused on studying the interaction between two proteins, Cdkl5 and Collybistin, involved in the altered formation of synapses in the context of a disease known as CDKL5-disorder.
+    \item Application of molecular biology techniques (i.e. immunoprecipitation, western blotting and immunofluorescence) to dissect the \textit{in vitro} interaction of these two proteins of interest.
+\end{bullets}
+%\sectionsep
+
+%--------------------------------------------------------------
+%     Skills
+%--------------------------------------------------------------
+\section{Skills}
+\begin{skillList}
+    \singleItem{Spoken Languages:}{Italian, English}
+    \\
+    \singleItem{Programming Languages:}{R, Python, Bash}
+    \\
+    \singleItem{Technology:}{Jupyter Notebooks, Git, HPC, Linux, Nextflow, Docker/Singularity, \LaTeX}
+    \\
+    \singleItem{Teaching and communication:}{created and taught a 3-day workshop (\href{https://mtoninel.github.io/SPC2023/}{website}) on using R for analyzing RNA-seq data}
+\end{skillList}
+%\sectionsep
+
+%--------------------------------------------------------------
+%     Publications
+%--------------------------------------------------------------
+\section{Publications}
+Toninelli, M., Rossetti, G. and Pagani, M., \textbf{Charting the tumor microenvironment with spatial profiling technologies}. \textit{Trends in Cancer} \textbf{9}-12 (2023) \href{https://doi.org/10.1016/j.trecan.2023.08.004}{https://doi.org/10.1016/j.trecan.2023.08.004}\\
+\end{document}
